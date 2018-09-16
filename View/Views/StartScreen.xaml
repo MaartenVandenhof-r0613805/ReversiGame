@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="View.Views.StartScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View.Views"
+             mc:Ignorable="d"
+             Background="#8ea253"
+             Height="400px" Width="500px">
+    <!--StartScreen-->
+
+    <Grid>
+        <StackPanel Margin="7,10" VerticalAlignment="Center" HorizontalAlignment="Center" Height="280">
+            <TextBlock Text="Welcome" TextAlignment="Center" Width="390px" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" FontSize="30" Foreground="White" Height="31" Margin="0,10,0,60"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="5px" x:Name="RowsAmount" DataContext="{Binding Mode=OneWay}" >
+                    <TextBlock Text="Amount of Rows" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Margin="5" Foreground="White" FontSize="15" TextAlignment="Center"/>
+                    <TextBox Text="{Binding Width}" Background="#dfef89" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Height="20" FontSize="15" TextAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="5px" DataContext="{Binding Mode=OneWay}" >
+                    <TextBlock Text="Amount of squares" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Margin="5" Foreground="White" FontSize="15" TextAlignment="Center"/>
+                    <TextBox Text="{Binding Height}" Background="#dfef89" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Height="20" FontSize="15" TextAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="5px" DataContext="{Binding Mode=OneWay}" >
+                    <TextBlock Text="Name Black" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Margin="5" Foreground="White" FontSize="15" TextAlignment="Center"/>
+                    <TextBox Text="{Binding NameBlack}" Background="#dfef89" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Height="20" FontSize="15" TextAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5px" DataContext="{Binding Mode=OneWay}" >
+                    <TextBlock Text="Name White" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Margin="5" Foreground="White" FontSize="15" TextAlignment="Center"/>
+                    <TextBox Text="{Binding NameWhite}" Background="#dfef89" BorderThickness="0" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" Height="20" FontSize="15" TextAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+            <Button Command="{Binding Command}" Height="40px" Width="130px" VerticalAlignment="Bottom" FontFamily="pack://application:,,,/Fonts/#Roboto Slab" 
+                            Background="#182932" Foreground="White" BorderThickness="0" Margin="0,20,5,0" FontSize="20">
+                <TextBlock Text="Go To Game"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

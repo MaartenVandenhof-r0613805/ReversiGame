@@ -1,0 +1,22 @@
+﻿<Application x:Class="View.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:View"
+             xmlns:ViewModel="clr-namespace:ViewModel;assembly=ViewModel"
+             xmlns:view="clr-namespace:View.Views"
+             >
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type ViewModel:StartScreenViewModel}">
+            <view:StartScreen />
+            <!-- This is a UserControl -->
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModel:BoardViewModel}">
+            <view:GameScreen />
+            <!-- This is a UserControl -->
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModel:EndScreenViewModel}">
+            <view:EndScreen />
+        <!-- This is a UserControl -->
+        </DataTemplate>
+    </Application.Resources>
+</Application>
